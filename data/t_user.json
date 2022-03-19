@@ -1,0 +1,23 @@
+{
+    "t_user": {
+        "acount_relation_id": "NOT AVAILABLE!!!",
+        "ban_flag": 0,
+        "comment": "Comment.",
+        "create_store_type": 2,
+        "emblem_id": 10100000,
+        "exp": 1980,
+        "friend_point": 220,
+        "friend_unit_id": 311001001,
+        "gold": 71000,
+        "home_background_id": 110400001,
+        "home_unit_id_1": 311001001,
+        "home_unit_id_2": 311002001,
+        "last_login": "2020-03-31 15:00:00",
+        "name": "Username",
+        "push_flag": 1,
+        "tutorial_end_at": "1972-11-21 00:55:54",
+        "tutorial_status": 99,
+        "user_id": 1,
+        "view_user_id": 1
+    }
+}

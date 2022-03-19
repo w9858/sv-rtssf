@@ -1,0 +1,10 @@
+{"t_user_worker_list":
+    [
+        {
+            "add_worker": 0,
+            "max_worker": 5000,
+            "recover_end_time": 1,
+            "worker_type": 1
+        }
+    ]
+}

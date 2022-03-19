@@ -1,0 +1,9 @@
+{"t_user_subscription_list":[
+    {
+        "id": 1,
+        "user_id": 1,
+        "subscription_id": 1,
+        "login_at": "2020-02-15 19:30:44",
+        "expiration_at": "2030-02-15 19:30:44"
+    }
+]}

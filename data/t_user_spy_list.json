@@ -1,0 +1,12 @@
+{"t_user_spy_list":[
+    {
+        "user_spy_id": 0,
+        "spy_id": 0,
+        "unit_id": 0,
+        "sub_unit_id": 0,
+        "state": 0,
+        "start_time": 0,
+        "is_force_clear": 0,
+        "subscription_flag": 0
+    }
+]}
