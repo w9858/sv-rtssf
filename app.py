@@ -15,7 +15,8 @@ async def add_header(request, response):
     if ((request.host == "api.relefra.jp") & (request.method == 'POST')):
         response.headers['Content-Type'] = 'application/x-google-protobuf'
         response.headers['X_SQLITE_VER'] = 81
-        response.headers['X_RES_STATUS'] = 0
+        try: response.headers['X_RES_STATUS'] = request.ctx.errorcode
+        except(AttributeError): response.headers['X_RES_STATUS'] = 0
         response.headers['X_TIMESTAMP'] = unixtime
         # Edit time if you want see old events. UNIX timestamp will needed.
 
