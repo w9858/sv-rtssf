@@ -20,7 +20,7 @@ def help_list(request,pbrq,pbrs):
     pbrs.m_help_list[1].id = 2
     pbrs.m_help_list[1].category = 1
     pbrs.m_help_list[1].order = 2
-    pbrs.m_help_list[1].title = "Contact to geek"
+    pbrs.m_help_list[1].title = "Contact"
     pbrs.m_help_list[1].contents = "\n\
     <color=#00acee>Twitter</color> : @gggk__  (two underbar)\n\n\
     <color=#ea4335>Email</color> : wjames9858@gmail.com\n\n\
