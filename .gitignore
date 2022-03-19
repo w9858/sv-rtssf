@@ -75,3 +75,4 @@ data/*.zip
 img/assets/
 img/images/
 img/sqlites/
+data/*.json
