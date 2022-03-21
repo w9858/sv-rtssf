@@ -23,4 +23,5 @@ async def eventmap_handler(request, path):
     if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     # if (path == ""): return eventmap_(request, pb.Request(), pb.Response())
     if (path == "get"): return eventmap_get(request, pb.RequestGet(), pb.ResponseGet())
+    if (path == "get_ranking"): return empty()
     else: raise exceptions.NotFound()
