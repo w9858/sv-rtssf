@@ -32,8 +32,7 @@ app.static('/cert', './cert', name="certification")
 async def root(request):
     return html('<h1>Download Self-signed Certification</h1>\
     <br><a href="./cert/cert.crt">Download cert.crt (Recommended on average devices.)</a>\
-    <br><a href="./cert/cert.pfx">Download cert.pfx (Try it if crt file doesn\'t work.)</a>\
-    <br><a href="https://support.google.com/pixelphone/answer/2844832">How to install certificate on Android phones.</a>')
+    <br><a href="./cert/cert.pfx">Download cert.pfx (Try it if crt file doesn\'t work.)</a>')
 
 ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
 ssl_context.load_cert_chain(certfile='./cert/cert.crt', keyfile='./cert/cert.key')
