@@ -11,7 +11,7 @@
 - Python 3.7 or higher
 - Your own Self-Signed Certification ( CN will be *.relefra.jp )
 - Modified Relefra apk
-- Android Device or Emulator
+- Android Device or Emulator (Needs modify hosts file)
 
 ---
 
