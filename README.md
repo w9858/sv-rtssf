@@ -18,28 +18,29 @@
 ### Dosen't Working features
 
 - Tsukikage base
-  + **Game will halt at entering base**
-  + Crafting weapons
-  + Crafting items
-  + Story, 1-koma archive
+  + Crafting weapons, items
   + Spy expedition
-  + Chara friendly point (It fixed 10Lv on battle)
+  + Fixed chara friendly point (Lv10)
 
-- Shop
-  + Everything (incl. exchange)
+- Shop & Exchange
 
 - Achievement & Present
   + It just shows empty list
 
-- Login bonus
-
 - Gacha
 
-- Battle result returns wrong rewards
+- Daily login bonus
+  + Needs modify api/mypage
 
-- Stamina will not consume
+- Battle result
+  + It returns wrong rewards
+
+- Stamina & Items will not consume
+  + Stamina setted max
+  + Stamina valued 5000 but under player level limit
+  + Items are moderately preloaded
 
 - Spy Units
   + Fixed values at all (max lv, max board)
-  + Edit data/_something_.json will allow edit values.
+  + Edit data/_something_.json will allow edit values
   + Can't equip weapon (default weapon only)

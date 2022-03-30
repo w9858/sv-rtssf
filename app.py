@@ -18,7 +18,7 @@ async def add_header(request, response):
         response.headers['X_SQLITE_VER'] = 81
         try: response.headers['X_RES_STATUS'] = request.ctx.errorcode
         except(AttributeError): response.headers['X_RES_STATUS'] = 0
-        response.headers['X_TIMESTAMP'] = unixtime
+        response.headers['X_TIMESTAMP'] = 1560146340
         # Edit time if you want see old events, or campaigns.
         # Unix Timestamp will needed.
         # ex. yyyi collabo timestamp is 1560146340
