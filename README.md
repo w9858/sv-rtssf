@@ -17,7 +17,7 @@
 
 ### Dosen't Working features
 
-- Tsukikage base
+- Base
   + Crafting weapons, items
   + Spy expedition
   + Fixed chara friendly point (Lv10)
