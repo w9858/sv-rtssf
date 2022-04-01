@@ -19,6 +19,7 @@
 
 - Base
   + Crafting weapons, items
+  + (recipe is not available)
   + Spy expedition
   + Fixed chara friendly point (Lv10)
 
@@ -34,6 +35,7 @@
 
 - Battle result
   + It returns wrong rewards
+  + recipe is not available
 
 - Stamina & Items will not consume
   + Stamina setted max
