@@ -21,7 +21,7 @@
   + Crafting weapons, items
   + (recipe is not available)
   + Spy expedition
-  + Fixed chara friendly point (Lv10)
+  + Always maximum friendly point (Lv10)
 
 - Shop & Exchange
 
