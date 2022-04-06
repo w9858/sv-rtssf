@@ -20,8 +20,6 @@ def mypage_index(request, pbrq, pbrs):
     pbrs.m_app_banner_list.add()
     pbrs.m_app_banner_list[0].banner_img = "Banner/1.png"
     pbrs.m_app_banner_list[0].order = 0
-    pbrs.m_app_banner_list[0].transition_id = 13
-    pbrs.m_app_banner_list[0].transition_value = 3
     pbrs.m_app_banner_list[0].start_at = "2019-01-03 20:02:44"
     pbrs.m_app_banner_list[0].end_at = "2027-05-03 20:02:44"
     pbrs.m_app_banner_list.add()
@@ -34,6 +32,8 @@ def mypage_index(request, pbrq, pbrs):
     pbrs.m_app_banner_list[2].order = 0
     pbrs.m_app_banner_list[2].start_at = "2019-01-03 20:02:44"
     pbrs.m_app_banner_list[2].end_at = "2027-05-03 20:02:44"
+    pbrs.m_app_banner_list[2].transition_id = 13
+    pbrs.m_app_banner_list[2].transition_value = 2
 
     # pbrs.t_user_login_bonus_list.add()
     # pbrs.t_user_login_bonus_list[0].login_bonus_id = 10000001
