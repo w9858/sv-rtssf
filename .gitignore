@@ -56,6 +56,11 @@ cover/
 instance/
 .webassets-cache
 
+# Sanic
+
+sanic/
+sanic_routing/
+
 # Environments
 .env
 .venv
