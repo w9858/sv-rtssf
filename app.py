@@ -8,14 +8,14 @@ app.blueprint(api)
 
 @app.on_response
 async def add_header(request, response):
-    unixtime = int(time.time())
+    now = int(time.time())
     #response.headers['Server'] = ''
     if ((request.host == "api.relefra.jp") & (request.method == 'POST')):
         response.headers['Content-Type'] = 'application/x-google-protobuf'
         response.headers['X_SQLITE_VER'] = 81
         try: response.headers['X_RES_STATUS'] = request.ctx.errorcode
         except(AttributeError): response.headers['X_RES_STATUS'] = 0
-        response.headers['X_TIMESTAMP'] = 1565146340
+        response.headers['X_TIMESTAMP'] = now
         
         # Edit time if you want see old events, or campaigns.
         # Unix Timestamp will needed.
