@@ -36,8 +36,11 @@ def mypage_index(request, pbrq, pbrs):
     pbrs.m_app_banner_list[2].end_at = "2027-05-03 20:02:44"
 
     # pbrs.t_user_login_bonus_list.add()
-    # pbrs.t_user_login_bonus_list[0].login_bonus_id = 30000011
-    # pbrs.t_user_login_bonus_list[0].day = 0
+    # pbrs.t_user_login_bonus_list[0].login_bonus_id = 10000001
+    # pbrs.t_user_login_bonus_list[0].day = 3
+    # daily login bonus  10000001
+
+
     # pbrs.m_ad_list.add()
     # pbrs.m_ad_list[0].ad_type = 1
     # pbrs.m_ad_list[0].target_id = 3010001
