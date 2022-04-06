@@ -35,6 +35,10 @@ async def root(request):
 
 if __name__ == "__main__":
     ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-    ssl_context.load_cert_chain(certfile='./cert/cert.crt', keyfile='./cert/cert.key')
+    try:
+        ssl_context.load_cert_chain(certfile='./cert/cert.crt', keyfile='./cert/cert.key')
+    except:
+        input("Unable to load certificate file! Two files are required. (./cert/cert.crt and ./cert/cert.key)")
+        exit()
     # app.run(host="0.0.0.0", port=443, ssl=ssl_context, debug=True)
     app.run(host="0.0.0.0", port=443, ssl=ssl_context, auto_reload=True)
