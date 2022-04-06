@@ -7,11 +7,100 @@ import base64
 
 gacha = Blueprint("api-gacha")
 
+def gacha_list(request,pbrq,pbrs):
+    pbrs.m_gacha_list.add()
+    pbrs.m_gacha_list[0].gacha_id = 3010001
+    pbrs.m_gacha_list[0].gacha_type = 1
+    pbrs.m_gacha_list[0].order = 1
+    pbrs.m_gacha_list[0].name = "GACHA NAME"
+    pbrs.m_gacha_list[0].header = "GACHA HEADER"
+    pbrs.m_gacha_list[0].description = "GACHA DESCRIPTION"
+    pbrs.m_gacha_list[0].background_id = 110401003
+    pbrs.m_gacha_list[0].disp_term_flag = 0
+    # pbrs.m_gacha_list[0].start_at = "1900-01-01 00:00:00"
+    # pbrs.m_gacha_list[0].end_at = "2072-11-21 00:55:54"
 
+    pbrs.m_gacha_feature_list.add()
+    pbrs.m_gacha_feature_list[0].gacha_id = 3010001
+    pbrs.m_gacha_feature_list[0].unit_id = 311001001
+    pbrs.m_gacha_feature_list[0].order = 1
+    pbrs.m_gacha_feature_list.add()
+    pbrs.m_gacha_feature_list[1].gacha_id = 3010001
+    pbrs.m_gacha_feature_list[1].unit_id = 311002001
+    pbrs.m_gacha_feature_list[1].order = 2
+    pbrs.m_gacha_feature_list.add()
+    pbrs.m_gacha_feature_list[2].gacha_id = 3010001
+    pbrs.m_gacha_feature_list[2].unit_id = 311003001
+    pbrs.m_gacha_feature_list[2].order = 3
+
+    pbrs.m_gacha_normal_detail_list.add()
+    pbrs.m_gacha_normal_detail_list[0].gacha_id = 3010001
+    pbrs.m_gacha_normal_detail_list[0].detail_id = 30100011
+    # pbrs.m_gacha_normal_detail_list[0].one_day_flag = 0
+    pbrs.m_gacha_normal_detail_list[0].draw_count = 1
+    pbrs.m_gacha_normal_detail_list[0].resource_type = 4
+    pbrs.m_gacha_normal_detail_list[0].resource_id = 1
+    pbrs.m_gacha_normal_detail_list[0].resource_value_id = 1
+    pbrs.m_gacha_normal_detail_list[0].amount = 100
+    pbrs.m_gacha_normal_detail_list[0].execution_limit = 0
+    pbrs.m_gacha_normal_detail_list.add()
+    pbrs.m_gacha_normal_detail_list[1].gacha_id = 3010001
+    pbrs.m_gacha_normal_detail_list[1].detail_id = 30100012
+    pbrs.m_gacha_normal_detail_list[1].draw_count = 10
+    pbrs.m_gacha_normal_detail_list[1].resource_type = 4
+    pbrs.m_gacha_normal_detail_list[1].resource_id = 1
+    pbrs.m_gacha_normal_detail_list[1].resource_value_id = 1
+    pbrs.m_gacha_normal_detail_list[1].amount = 1000
+    pbrs.m_gacha_normal_detail_list[1].execution_limit = 0
+    pbrs.m_gacha_normal_detail_list.add()
+    pbrs.m_gacha_normal_detail_list[2].gacha_id = 3010001
+    pbrs.m_gacha_normal_detail_list[2].detail_id = 30100013
+    pbrs.m_gacha_normal_detail_list[2].draw_count = 100
+    pbrs.m_gacha_normal_detail_list[2].resource_type = 4
+    pbrs.m_gacha_normal_detail_list[2].resource_id = 1
+    pbrs.m_gacha_normal_detail_list[2].resource_value_id = 1
+    pbrs.m_gacha_normal_detail_list[2].amount = 10000
+    pbrs.m_gacha_normal_detail_list[2].execution_limit = 0
+    
+    return raw(pbrs.SerializeToString())
+
+def gacha_draw(request,pbrq,pbrs):
+    request.ctx.errorcode = 1
+    pbrq.ParseFromString(request.body)
+    for i in range(10):
+        pbrs.draw_result_list.add()
+        pbrs.draw_result_list[0].resource_type = 3
+        pbrs.draw_result_list[0].resource_id = 311001001
+        pbrs.draw_result_list[0].resource_value_id = 311001001
+        pbrs.draw_result_list[0].amount = 0
+
+    # pbrs.omake_list.add()
+    # pbrs.omake_list[0].resource_type = 3
+    # pbrs.omake_list[0].resource_id = 311001001
+    # pbrs.omake_list[0].resource_value_id = 311001001
+    # pbrs.omake_list[0].amount = 1
+
+    pbrs.t_user_gacha_normal.gacha_id = 3010001
+    pbrs.t_user_gacha_normal.updated_at = "2022-04-20 00:55:54"
+    pbrs.t_user_gacha_normal.execution_count = 0
+
+    pbrs.t_user_gacha_normal_detail.gacha_id = 3010001
+    pbrs.t_user_gacha_normal_detail.gacha_detail_id = 30100012
+    pbrs.t_user_gacha_normal_detail.updated_at = "2022-04-20 00:55:54"
+    pbrs.t_user_gacha_normal_detail.execution_count = 0
+
+    # pbrs.update_resource_result.MergeFrom(cm.update_resource_result())
+
+    # pbrs.effect_1 = 1000
+    # pbrs.effect_2 = 1
+    # pbrs.effect_3_list.extend([1,0,1,0,1,0,1,0,1,0])
+    return raw(pbrs.SerializeToString())
 
 @gacha.post("/gacha/<path:path>")
 async def gacha_handler(request, path):
     if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
-    if (path == ""): return gamecenter_(request, pb.Request(), pb.Response())
-    if (any): return empty() # empty return
+    if (path == ""): return gacha_(request, pb.Request(), pb.Response())
+    if (path == "list"): return gacha_list(request, pb.RequestList(), pb.ResponseList())
+    if (path == "draw"): return gacha_draw(request, pb.RequestDraw(), pb.ResponseDraw())
+    if (any): return empty()
     else: raise exceptions.NotFound()
