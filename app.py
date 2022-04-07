@@ -37,12 +37,17 @@ app.static('/assets', './img/assets', name="img-assets")
 app.static('/sqlites', './img/sqlites', name="img-sqlites")
 app.static('/images', './img/images', name="img-images")
 app.static('/cert', './cert', name="certification")
+app.static('/static', './static', name="static")
 
 @app.get("/")
 async def root(request):
-    return html('<h1>Download Self-signed Certification</h1>\
-    <br><a href="./cert/cert.crt">Download cert.crt (Recommended on average devices.)</a>\
-    <br><a href="./cert/cert.pfx">Download cert.pfx (Try it if crt file doesn\'t work.)</a>')
+    htdoc = '<h1>Download Files</h1>'
+    htdoc += '<img src="https://w9858.github.io/220206/character/img/chara_kamari_face.png"></img>'
+    htdoc += '<br><a href="./cert/cert.crt">Download Self-signed Certification (./cert/cert.crt)</a>'
+    if (os.path.exists('./static/rrfr150modified.apk')):
+        htdoc += '<br><a href="./static/rrfr150modified.apk">Download Modified Application (./static/rrfr150modified.apk)</a>'
+    else: htdoc += '<br>There are no downloadable modified apk. (./static/rrfr150modified.apk)'
+    return html(htdoc)
 
 
 if __name__ == "__main__":
