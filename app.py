@@ -8,7 +8,20 @@ app.blueprint(api)
 
 @app.on_response
 async def add_header(request, response):
-    now = int(time.time())
+    try:
+        with open("./server_settings/time.txt", "r") as timef:
+            settime = timef.readline()
+            if(settime == "now"): now = int(time.time())
+            elif(settime.isnumeric()):
+                if(int(settime) > 2147483647):
+                    raise ValueError("Timestamp value is too large. Check ./server_settings/time.txt")
+                else: now = int(settime)
+            else: raise ValueError("Invaild timestamp value. Check ./server_settings/time.txt")
+    except(FileNotFoundError):
+        os.makedirs("./server_settings/", exist_ok=True)
+        with open("./server_settings/time.txt", "w") as timef:
+            timef.write("now")
+        now = int(time.time())
     #response.headers['Server'] = ''
     if ((request.host == "api.relefra.jp") & (request.method == 'POST')):
         response.headers['Content-Type'] = 'application/x-google-protobuf'
@@ -16,8 +29,7 @@ async def add_header(request, response):
         try: response.headers['X_RES_STATUS'] = request.ctx.errorcode
         except(AttributeError): response.headers['X_RES_STATUS'] = 0
         response.headers['X_TIMESTAMP'] = now
-        
-        # Edit time if you want see old events, or campaigns.
+        # Edit ./server_settings/time.txt if you want see old events, or campaigns.
         # Unix Timestamp will needed.
         # ex. yyyi collabo timestamp is 1560146340
 
