@@ -37,7 +37,7 @@ app.static('/assets', './img/assets', name="img-assets")
 app.static('/sqlites', './img/sqlites', name="img-sqlites")
 app.static('/images', './img/images', name="img-images")
 app.static('/cert', './cert', name="certification")
-app.static('/static', './static', name="static")
+app.static('/apk', './apk', name="apk_static")
 
 @app.get("/")
 async def root(request):
