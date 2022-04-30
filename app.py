@@ -44,9 +44,11 @@ async def root(request):
     htdoc = '<h1>Download Files</h1>'
     htdoc += '<img src="https://w9858.github.io/220206/character/img/chara_kamari_face.png"></img>'
     htdoc += '<br><a href="./cert/cert.crt">Download Self-signed Certification (./cert/cert.crt)</a>'
-    if (os.path.exists('./static/rrfr150modified.apk')):
-        htdoc += '<br><a href="./static/rrfr150modified.apk">Download Modified Application (./static/rrfr150modified.apk)</a>'
-    else: htdoc += '<br>There are no downloadable modified apk. (./static/rrfr150modified.apk)'
+    if (os.path.exists('./apk/rrfr150modified.apk')):
+        htdoc += '<br><a href="./apk/rrfr150modified.apk">Download Modified Application (./apk/rrfr150modified.apk)</a>'
+    else: htdoc += '<br>There are no downloadable modified apk. (./apk/rrfr150modified.apk)'
+    if (os.path.exists('./apk/rrfr150modified_notch_override.apk')):
+        htdoc += '<br><a href="./apk/rrfr150modified_notch_override.apk">Download Modified Application (./apk/rrfr150modified_notch_override.apk)</a>'
     return html(htdoc)
 
 
