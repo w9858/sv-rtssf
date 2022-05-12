@@ -22,7 +22,7 @@ def help_list(request,pbrq,pbrs):
     pbrs.m_help_list[1].order = 2
     pbrs.m_help_list[1].title = "Contact"
     pbrs.m_help_list[1].contents = "\n\
-    <color=#00acee>Twitter</color> : @gggk__  (two underbar)\n\n\
+    <color=#00acee>Twitter</color> : @w9858__  (two underbar)\n\n\
     <color=#ea4335>Email</color> : wjames9858@gmail.com\n\n\
     <color=#5865f2>Discord</color> : jhoon6#9050\n\n\
     <color=#6e5494>GitHub</color> : https://github.com/w9858"
