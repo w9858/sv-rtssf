@@ -20,7 +20,7 @@ def information_index(requset,pbrq,pbrs):
     pbrs.m_information_list[0].information_id = 1
     pbrs.m_information_list[0].tab_id = 1
     pbrs.m_information_list[0].title = "Contact"
-    pbrs.m_information_list[0].contents = "<color=#00acee>Twitter</color> : @gggk__  (two underbar)\n\n<color=#ea4335>Email</color> : wjames9858@gmail.com\n\n"+\
+    pbrs.m_information_list[0].contents = "<color=#00acee>Twitter</color> : @w9858__  (two underbar)\n\n<color=#ea4335>Email</color> : wjames9858@gmail.com\n\n"+\
     "<color=#5865f2>Discord</color> : jhoon6#9050\n\n<color=#6e5494>GitHub</color> : https://github.com/w9858\n<img>https://w9858.github.io/220206/character/img/chara_"+chara_name+"_face.png</img>"
     pbrs.m_information_list[0].view_android = 1
     pbrs.m_information_list[0].pin_flag = 1
