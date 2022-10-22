@@ -48,3 +48,6 @@ pip install -r requirements.txt
   + Fixed values at all (max lv, max board)
   + Edit data/_something_.json will allow edit values
   + Can't equip weapon (default weapon only)
+  
+- AES-CBC-256 Encryption-Decryption networking (original app)
+  + This only works on modified app
