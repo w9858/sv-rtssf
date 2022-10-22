@@ -9,12 +9,12 @@
 ### Requirements
 
 - Python 3.7 or higher
-- Your own Self-Signed Certification ( CN will be *.relefra.jp )
+- Self-Signed Certification (run makecert.py / install same cert on your device)
 - Modified Relefra apk
 - Android Device or Emulator (Needs modify hosts file)
 - install pip requirements by this command. 
 ```
-pip freeze > requirements.txt
+pip install -r requirements.txt
 ```
 
 ---
@@ -31,8 +31,6 @@ pip freeze > requirements.txt
 
 - Achievement & Present
   + It just shows empty list
-
-- Gacha
 
 - Daily login bonus
   + Needs modify api/mypage

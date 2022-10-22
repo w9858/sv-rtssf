@@ -41,7 +41,7 @@ def load_split(request, pbrq, pbrs):
 
 @load.post("/load/<path:path>")
 async def load_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == "split"): return load_split(request, pb.RequestSplit(), pb.ResponseSplit())
     if (path == "sqlite_versions"): return load_sqliteversions(request, pb.RequestSqliteVersions(), pb.ResponseSqliteVersions())
     else: raise exceptions.NotFound()

@@ -14,6 +14,6 @@ def item_stamina_recover(request, pbrq, pbrs):
 
 @item.post("/item/<path:path>")
 async def item_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == "stamina_recover"): return item_stamina_recover(request, pb.RequestStaminaRecover(), pb.ResponseStaminaRecover())
     else: raise exceptions.NotFound()

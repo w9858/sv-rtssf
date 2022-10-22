@@ -22,7 +22,7 @@ def archive_release(request,pbrq,pbrs):
 
 @archive.post("/archive/<path:path>")
 async def archive_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == "read"): return archive_read(request, pb.RequestRead(), pb.ResponseRead())
     if (path == "release"): return archive_read(request, pb.RequestRelease(), pb.ResponseRelease())
     else: raise exceptions.NotFound()

@@ -11,7 +11,7 @@ present = Blueprint("api-present")
 
 @present.post("/present/<path:path>")
 async def present_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == ""): return present_(request, pb.Request(), pb.Response())
     if (any): return empty() # empty return
     else: raise exceptions.NotFound()

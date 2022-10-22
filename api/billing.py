@@ -13,6 +13,6 @@ def billing_top(request,pbrq,pbrs):
 
 @billing.post("/billing/<path:path>")
 async def billing_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == "top"): return billing_top(request, pb.RequestTop(), pb.ResponseTop())
     else: raise exceptions.NotFound()

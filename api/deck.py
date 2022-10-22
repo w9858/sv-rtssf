@@ -21,7 +21,7 @@ def deck_change_name(request,pbrq,pbrs):
 
 @deck.post("/deck/<path:path>")
 async def deck_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == "save"): return deck_save(request, pb.RequestSave(), pb.ResponseSave())
     if (path == "change_name"): return deck_change_name(request, pb.RequestChangeName(), pb.ResponseChangeName())
     else: raise exceptions.NotFound()

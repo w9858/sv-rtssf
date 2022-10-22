@@ -23,7 +23,7 @@ def help_list(request,pbrq,pbrs):
     pbrs.m_help_list[1].title = "Contact"
     pbrs.m_help_list[1].contents = "\n\
     <color=#00acee>Twitter</color> : @w9858__  (two underbar)\n\n\
-    <color=#ea4335>Email</color> : wjames9858@gmail.com\n\n\
+    <color=#ea4335>Email</color> : w9858@protonmail.com\n\n\
     <color=#5865f2>Discord</color> : jhoon6#9050\n\n\
     <color=#6e5494>GitHub</color> : https://github.com/w9858"
 
@@ -33,10 +33,10 @@ def help_list(request,pbrq,pbrs):
     pbrs.m_help_list[2].order = 3
     pbrs.m_help_list[2].title = "Website Backups"
     pbrs.m_help_list[2].contents = "\n\
-    https://w9858.github.io/ - Game site\n\n\
-    https://w9858.github.io/220206/ - Anime site\n\n\
-    https://w9858.github.io/180129/ - Anime site - old one\n\n\
-    https://w9858.github.io/180325/ - Anime site - old one"
+    https://w9858.pages.dev/ - Game site\n\n\
+    https://w9858.pages.dev/220206/ - Anime site\n\n\
+    https://w9858.pages.dev/180129/ - Anime site - old one\n\n\
+    https://w9858.pages.dev/180325/ - Anime site - old one"
 
     pbrs.m_help_list.add()
     pbrs.m_help_list[3].id = 4
@@ -75,6 +75,6 @@ SOFTWARE.'
 
 @help.post("/help/<path:path>")
 async def help_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == "list"): return help_list(request, pb.RequestList(), pb.ResponseList())
     else: raise exceptions.NotFound()

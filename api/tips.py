@@ -11,6 +11,6 @@ tips = Blueprint("api-tips")
 
 @tips.post("/tips/<path:path>")
 async def tips_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == ""): return tips_(request, pb.Request(), pb.Response())
     else: raise exceptions.NotFound()

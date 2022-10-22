@@ -13,7 +13,7 @@ def tutorial_adv_start(request, pbrq, pbrs):
 
 @tutorial.post("/tutorial/<path:path>")
 async def tutorial_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == "adv_start"): return tutorial_adv_start(request, pb.RequestAdvStart(), pb.ResponseAdvStart())
     if (path == "adv_clear"): return empty()
     if (path == "update_progress"): return empty()

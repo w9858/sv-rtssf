@@ -11,6 +11,6 @@ recipe = Blueprint("api-recipe")
 
 @recipe.post("/recipe/<path:path>")
 async def recipe_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == ""): return recipe_(request, pb.Request(), pb.Response())
     else: raise exceptions.NotFound()

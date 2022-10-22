@@ -20,7 +20,7 @@ def spy_get_list(request,pbrq,pbrs):
 
 @spy.post("/spy/<path:path>")
 async def spy_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == "get_list"): return spy_get_list(request, pb.RequestGetList(), pb.ResponseGetList())
     if (any): return empty()
     else: raise exceptions.NotFound()

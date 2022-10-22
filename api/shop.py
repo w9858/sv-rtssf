@@ -11,7 +11,7 @@ shop = Blueprint("api-shop")
 
 @shop.post("/shop/<path:path>")
 async def shop_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == ""): return shop_(request, pb.Request(), pb.Response())
     if (any): request.ctx.errorcode = 201; return empty() # empty maintain return
     else: raise exceptions.NotFound()

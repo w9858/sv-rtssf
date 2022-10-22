@@ -7,6 +7,8 @@ import base64
 
 board = Blueprint("api-board")
 
+# ALL MAX
+
 def board_release(request,pbrq,pbrs):
     pbrq.ParseFromString(request.body)
     pbrs.t_user_board.unit_id = pbrq.unit_id
@@ -24,6 +26,6 @@ def board_release(request,pbrq,pbrs):
 
 @board.post("/board/<path:path>")
 async def board_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == "release"): return board_release(request, pb.RequestRelease(), pb.ResponseRelease())
     else: raise exceptions.NotFound()

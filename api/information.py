@@ -20,15 +20,15 @@ def information_index(requset,pbrq,pbrs):
     pbrs.m_information_list[0].information_id = 1
     pbrs.m_information_list[0].tab_id = 1
     pbrs.m_information_list[0].title = "Contact"
-    pbrs.m_information_list[0].contents = "<color=#00acee>Twitter</color> : @w9858__  (two underbar)\n\n<color=#ea4335>Email</color> : wjames9858@gmail.com\n\n"+\
-    "<color=#5865f2>Discord</color> : jhoon6#9050\n\n<color=#6e5494>GitHub</color> : https://github.com/w9858\n<img>https://w9858.github.io/220206/character/img/chara_"+chara_name+"_face.png</img>"
+    pbrs.m_information_list[0].contents = "<color=#00acee>Twitter</color> : @w9858__  (two underbar)\n\n<color=#ea4335>Email</color> : w9858@protonmail.com\n\n"+\
+    "<color=#5865f2>Discord</color> : jhoon6#9050\n\n<color=#6e5494>GitHub</color> : https://github.com/w9858\n<img>https://w9858.pages.dev/220206/character/img/chara_"+chara_name+"_face.png</img>"
     pbrs.m_information_list[0].view_android = 1
     pbrs.m_information_list[0].pin_flag = 1
 
     pbrs.m_information_list.add()
     pbrs.m_information_list[1].information_id = 2
     pbrs.m_information_list[1].tab_id = 1
-    pbrs.m_information_list[1].title = "<img>https://w9858.github.io/other/img/bannertest.png</img>"
+    pbrs.m_information_list[1].title = "<img>https://w9858.pages.dev/other/img/bannertest.png</img>"
     pbrs.m_information_list[1].contents = "PNG image from wikimedia, not saved in device local storage.\n"+\
     "Image From Wikimedia Commons, the free media repository\n<img>https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png</img>\n"+\
     "User:Ed g2s, CC BY-SA 3.0<https://creativecommons.org/licenses/by-sa/3.0>\n<img>Info/20190617/311010008</img>\n\nFile : /Info/20190617/311010008.png"
@@ -44,7 +44,7 @@ def information_index(requset,pbrq,pbrs):
 
 @information.post("/information/<path:path>")
 async def information_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == "index"): return information_index(request, pb.RequestIndex(), pb.ResponseIndex())
     if (path == "read"): return empty()
     else: raise exceptions.NotFound()

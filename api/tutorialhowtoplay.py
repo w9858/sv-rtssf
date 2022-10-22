@@ -13,6 +13,6 @@ def tutorialhowtoplay_save(request,pbrq,pbrs):
 
 @tutorialhowtoplay.post("/tutorialhowtoplay/<path:path>")
 async def tutorialhowtoplay_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == "save"): return tutorialhowtoplay_save(request, pb.RequestSave(), pb.ResponseSave())
     else: raise exceptions.NotFound()

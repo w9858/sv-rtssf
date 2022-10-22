@@ -61,7 +61,7 @@ def user_stamina_recover(request, pbrq, pbrs):
 
 @user.post("/user/<path:path>")
 async def user_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == "change_comment"): return user_change_comment(request, pb.RequestChangeComment(), pb.ResponseChangeComment())
     if (path == "change_emblem"): return user_change_emblem(request, pb.RequestChangeEmblem(), pb.ResponseChangeEmblem())
     if (path == "change_friend_unit"): return user_change_friend_unit(request, pb.RequestChangeFriendUnit(), pb.ResponseChangeFriendUnit())

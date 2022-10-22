@@ -96,7 +96,7 @@ def quest_continue(request,pbrq,pbrs):
 
 @quest.post("/quest/<path:path>")
 async def quest_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == "start_adv"): return quest_start_adv(request, pb.RequestStartAdv(), pb.ResponseStartAdv())
     if (path == "clear_adv"): return quest_clear_adv(request, pb.RequestClearAdv(), pb.ResponseClearAdv())
     if (path == "start"): return quest_start(request, pb.RequestStart(), pb.ResponseStart())

@@ -16,6 +16,6 @@ def regist_check(request,pbrq,pbrs):
 
 @regist.post("/regist/<path:path>")
 async def regist_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == "check"): return regist_check(request, pb.RequestCheck(), pb.ResponseCheck())
     else: raise exceptions.NotFound()

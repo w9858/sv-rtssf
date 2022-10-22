@@ -11,6 +11,6 @@ exchange = Blueprint("api-exchange")
 
 @exchange.post("/exchange/<path:path>")
 async def exchange_handler(request, path):
-    if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
+    # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == ""): return exchange_(request, pb.Request(), pb.Response())
     else: raise exceptions.NotFound()
