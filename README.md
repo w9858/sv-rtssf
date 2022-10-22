@@ -14,7 +14,7 @@
 - Android Device or Emulator (Needs modify hosts file)
 - install pip requirements by this command. 
 ```
-pip freeze > requirements.txt
+pip install -r requirements.txt
 ```
 
 ---
