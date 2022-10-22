@@ -30,10 +30,6 @@ def cert_gen(
     cert.get_subject().CN = commonName
     # Add base constraints
     cert.add_extensions([
-        crypto.X509Extension("subjectKeyIdentifier", False, "hash", subject=cert),
-    ])
-
-    cert.add_extensions([
         crypto.X509Extension(
             b"keyUsage", False,
             b"Digital Signature, Non Repudiation, Key Encipherment"),

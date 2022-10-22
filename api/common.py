@@ -178,3 +178,44 @@ def adv_clear(num):
         i+=1
     with open("./data/t_user_archive_list.json", mode="w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, sort_keys=True, ensure_ascii=False)
+
+# board
+
+# def boardup(unitid, sheet_no, progress_adj):
+
+
+# weapon
+
+def weapon_equip(unit_id, user_weapon_id):
+    with open("./data/t_user_unit_weapon_list.json", mode="r", encoding="utf-8") as f:
+        data = json.load(f)
+    #data["t_user_unit_weapon_list"][i]["unit_id"]
+    i = 0
+    if(user_weapon_id == 0):
+        while(True):
+            if i >= len(data["t_user_unit_weapon_list"]):
+                # new
+                break
+            if data["t_user_unit_weapon_list"][i]["unit_id"] == unit_id:
+                del data["t_user_unit_weapon_list"][i]
+                break
+            i+=1
+    else: 
+        while(True):
+            if i >= len(data["t_user_unit_weapon_list"]):
+                # new
+                data["t_user_unit_weapon_list"].append({
+                    "user_id": 0,
+                    "unit_id": unit_id,
+                    "user_weapon_id": user_weapon_id
+                })
+                break
+            if data["t_user_unit_weapon_list"][i]["unit_id"] == unit_id:
+                # already in
+                data["t_user_unit_weapon_list"][i]["user_id"] = 0
+                data["t_user_unit_weapon_list"][i]["unit_id"] = unit_id
+                data["t_user_unit_weapon_list"][i]["user_weapon_id"] = user_weapon_id
+                break
+            i+=1
+    with open("./data/t_user_unit_weapon_list.json", mode="w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, sort_keys=True, ensure_ascii=False)

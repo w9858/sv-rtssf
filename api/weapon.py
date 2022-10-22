@@ -9,7 +9,6 @@ weapon = Blueprint("api-weapon")
 
 def weapon_equip(request, pbrq, pbrs):
     pbrq.ParseFromString(request.body)
-    logger.info("\n"+str(pbrq))
     cm.weapon_equip(pbrq.unit_id, pbrq.user_weapon_id)
     jf.Parse(cm.read("t_user_unit_weapon_list"), pbrs)
     if(pbrq.user_weapon_id == 0):
@@ -22,5 +21,5 @@ def weapon_equip(request, pbrq, pbrs):
 @weapon.post("/weapon/<path:path>")
 async def weapon_handler(request, path):
     # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
-    if (path == ""): return weapon_(request, pb.Request(), pb.Response())
+    if (path == "equip"): return weapon_equip(request, pb.RequestEquip(), pb.ResponseEquip())
     else: raise exceptions.NotFound()

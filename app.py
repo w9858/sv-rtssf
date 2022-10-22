@@ -23,7 +23,7 @@ async def add_header(request, response):
             timef.write("now")
         now = int(time.time())
     #response.headers['Server'] = ''
-    if (("protobuf" in request.headers['content-type']) & (request.method == 'POST')):
+    if ((request.method == 'POST')):
         response.headers['Content-Type'] = 'application/x-google-protobuf'
         response.headers['X_SQLITE_VER'] = 81
         try: response.headers['X_RES_STATUS'] = request.ctx.errorcode
