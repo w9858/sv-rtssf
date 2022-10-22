@@ -1,4 +1,4 @@
-# Local Priv-Server for relefra
+# Local Private Server for RELEASE THE SPYCE secret fragrance
 
 **Use at your own risk!**
 
@@ -12,6 +12,10 @@
 - Your own Self-Signed Certification ( CN will be *.relefra.jp )
 - Modified Relefra apk
 - Android Device or Emulator (Needs modify hosts file)
+- install pip requirements by this command. 
+```
+pip freeze > requirements.txt
+```
 
 ---
 
