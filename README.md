@@ -2,7 +2,7 @@
 
 **Use at your own risk!**
 
-**Resource files and certificate are not provided.**
+**Resource files are not provided.**
 
 ---
 
