@@ -28,21 +28,17 @@ pip install -r requirements.txt
 - Shop & Exchange
 
 - Achievement & Present
-  + It just shows empty list
 
 - Daily login bonus
-  + Needs modify api/mypage.py
 
-- Battle result
-  + It returns wrong rewards
-  + recipe isn't available
+- Battle result returns wrong rewards
 
 - Stamina & Items will not consume
   + Stamina always setted max
   + Stamina valued 5000 but showing player level limit
 
 - Spy Units
-  + Fixed values at all (max lv, max board)
+  + Fixed values at all (max lv, max ability board)
   + No weapon bonus skills
   
 - AES-CBC-256 Encryption-Decryption networking (by original app)
