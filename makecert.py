@@ -9,7 +9,6 @@ def cert_gen(
     localityName="Sorasaki-city",
     stateOrProvinceName="Sorasaki-city",
     organizationName="Tsukikage",
-    serialNumber=0,
     validityStartInSeconds=0,
     validityEndInSeconds=10*365*24*60*60,
     KEY_FILE = "./cert/cert.key",
