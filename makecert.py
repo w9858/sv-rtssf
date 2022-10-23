@@ -4,7 +4,7 @@ from OpenSSL import crypto, SSL
 import random
 
 def cert_gen(
-    commonName="Self-Signed Cert for RTSsf",
+    commonName="*.relefra.jp",
     countryName="JP",
     localityName="Sorasaki-city",
     stateOrProvinceName="Sorasaki-city",
@@ -31,11 +31,11 @@ def cert_gen(
     cert.add_extensions([
         crypto.X509Extension(
             b"keyUsage", False,
-            b"Digital Signature, Non Repudiation, Key Encipherment"),
+            b"Digital Signature, Key Encipherment"),
         crypto.X509Extension(
             b"basicConstraints", False, b"CA:TRUE"),
         crypto.X509Extension(
-            b'extendedKeyUsage', False, b'serverAuth, clientAuth'),
+            b'extendedKeyUsage', False, b'serverAuth'),
     ])
     cert.add_extensions([crypto.X509Extension(b"subjectAltName", False, SAN.encode())])
     cert.set_serial_number(random.randint(50000000,100000000))
@@ -49,4 +49,11 @@ def cert_gen(
     with open(KEY_FILE, "wt") as f:
         f.write(crypto.dump_privatekey(crypto.FILETYPE_PEM, k).decode("utf-8"))
 
-cert_gen()
+try:
+    cert_gen()
+    print("Done.")
+except Exception as e:
+    print(e)
+    print("Failed!")
+
+input()
