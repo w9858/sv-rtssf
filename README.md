@@ -9,9 +9,9 @@
 ### Requirements
 
 - Python 3.7 or higher
-- Self-Signed Certification (run makecert.py / install same cert on your device)
-- Modified Relefra apk
 - Android Device or Emulator (Needs modify hosts file)
+- [Modified Relefra apk](https://mega.nz/file/AJ0DXaqA#hOiFlmsWZXwgFJBbrcLj2hvbV5ie-wGgv_pJKxaAoLc)
+- Self-Signed Certification (run makecert.py / install same cert on your device)
 - install pip requirements by this command. 
 ```
 pip install -r requirements.txt
@@ -19,13 +19,11 @@ pip install -r requirements.txt
 
 ---
 
-### Dosen't Working features
+### Not implemented features
 
 - Base
-  + Crafting weapons, items
-  + (recipe is not available)
+  + Crafting weapons, items (recipe isn't available)
   + Spy expedition
-  + Always maximum friendly point (Lv10)
 
 - Shop & Exchange
 
@@ -33,20 +31,19 @@ pip install -r requirements.txt
   + It just shows empty list
 
 - Daily login bonus
-  + Needs modify api/mypage
+  + Needs modify api/mypage.py
 
 - Battle result
   + It returns wrong rewards
-  + recipe is not available
+  + recipe isn't available
 
 - Stamina & Items will not consume
-  + Stamina setted max
-  + Stamina valued 5000 but under player level limit
-  + Items are moderately preloaded
+  + Stamina always setted max
+  + Stamina valued 5000 but showing player level limit
 
 - Spy Units
   + Fixed values at all (max lv, max board)
   + No weapon bonus skills
   
-- AES-CBC-256 Encryption-Decryption networking (original app)
-  + This only works on modified app
+- AES-CBC-256 Encryption-Decryption networking (by original app)
+  + sv-rtssf only works on modified app  
