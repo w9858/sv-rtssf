@@ -20,25 +20,10 @@ pip install -r requirements.txt
 
 ### Not implemented features
 
-- Base
-  + Crafting weapons, items (recipe isn't available)
-  + Spy expedition
-
+- Crafting weapons, items (recipe isn't available)
+- Spy expedition
 - Shop & Exchange
-
 - Achievement & Present
-
-- Daily login bonus
-
-- Battle result returns wrong rewards
-
-- Stamina & Items will not consume
-  + Stamina always setted max
-  + Stamina valued 5000 but showing player level limit
-
-- Spy Units
-  + Fixed values at all (max lv, max ability board)
-  + No weapon bonus skills
-  
+- Stamina, Item will not consume
 - AES-CBC-256 Encryption-Decryption networking (by original app)
   + sv-rtssf only works on modified app  
