@@ -2,8 +2,6 @@
 
 **Use at your own risk!**
 
-**Resource files are not provided.**
-
 ---
 
 ### Requirements
