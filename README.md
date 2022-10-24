@@ -9,10 +9,10 @@
 ### Requirements
 
 - Python 3.7 or higher
-- Android Device or Emulator (Needs modify hosts file)
+- Android Device or Emulator (Modify your device's hosts file)
 - [Modified Relefra apk](https://mega.nz/file/wYdkTRYJ#VUIetZRGFw6Jhiy5wk806TDktzzOO2FTtgpt8N8OAws)
 - [Assets from img server](https://mega.nz/file/FRUQlI5b#yT4nrN9t6P-5mDsD3cJXRp0s3oOZSlFMrhn1lScUwrE)
-- Self-Signed Certification (run makecert.py / install same cert on your device)
+- Self-Signed Certification (Run makecert.py / Install same cert on your device)
 - install pip requirements by this command. 
 ```
 pip install -r requirements.txt
