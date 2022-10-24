@@ -25,5 +25,5 @@ pip install -r requirements.txt
 - Shop & Exchange
 - Achievement & Present
 - Stamina, Item will not consume
-- AES-CBC-256 Encryption-Decryption networking (by original app)
+- AES-256-CBC Encryption-Decryption networking (by original app)
   + sv-rtssf only works on modified app  
