@@ -20,6 +20,7 @@ pip install -r requirements.txt
 
 ### Not implemented features
 
+- Support iOS devices (I don't have any Apple devices)
 - Crafting weapons, items (recipe isn't available)
 - Spy expedition
 - Shop & Exchange
