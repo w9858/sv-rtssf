@@ -76,7 +76,9 @@ venv.bak/
 # spy
 pb-origin/
 tmp/
-cert/cert.*
+cert/*.key
+cert/*.crt
+cert/*.pem
 data/*.7z
 data/*.zip
 *.code-workspace

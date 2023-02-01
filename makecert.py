@@ -1,5 +1,6 @@
 # https://stackoverflow.com/a/60804101
 # https://stackoverflow.com/a/44118545
+
 from OpenSSL import crypto, SSL
 import random
 
@@ -11,8 +12,8 @@ def cert_gen(
     organizationName="Tsukikage",
     validityStartInSeconds=0,
     validityEndInSeconds=10*365*24*60*60,
-    KEY_FILE = "./cert/cert.key",
-    CERT_FILE = "./cert/cert.crt",
+    KEY_FILE = "./cert/privkey.pem",
+    CERT_FILE = "./cert/fullchain.pem",
     SAN = "DNS:*.relefra.jp, DNS:relefra.jp, DNS:api.relefra.jp, DNS:img.relefra.jp"):
     #can look at generated file using openssl:
     #openssl x509 -inform pem -in selfsigned.crt -noout -text

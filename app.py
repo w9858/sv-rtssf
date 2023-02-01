@@ -36,22 +36,17 @@ async def add_header(request, response):
 app.static('/assets', './img/assets', name="img-assets")
 app.static('/sqlites', './img/sqlites', name="img-sqlites")
 app.static('/images', './img/images', name="img-images")
-app.static('/cert', './cert', name="certification")
+app.static('/cert/fullchain.pem', './cert/fullchain.pem', name="certification")
 
 @app.get("/")
 async def root(request):
     htdoc = '<h1>Download Files</h1>'
     htdoc += '<img src="https://w9858.pages.dev/220206/character/img/chara_kamari_face.png"></img>'
-    htdoc += '<br><a href="./cert/cert.crt">Download Self-signed Certification (./cert/cert.crt)</a>'
+    htdoc += '<br><a href="./cert/fullchain.pem">Download Self-signed Certification</a>'
     return html(htdoc)
 
 
 if __name__ == "__main__":
-    ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-    try:
-        ssl_context.load_cert_chain(certfile='./cert/cert.crt', keyfile='./cert/cert.key')
-    except:
-        input("Unable to load certificate file! Two files are required. (./cert/cert.crt and ./cert/cert.key)")
-        exit()
-    # app.run(host="0.0.0.0", port=443, ssl=ssl_context, debug=True)
-    app.run(host="0.0.0.0", port=443, ssl=ssl_context, auto_reload=True)
+
+    # app.run(host="0.0.0.0", port=443, ssl="./cert", debug=True)
+    app.run(host="0.0.0.0", port=443, ssl="./cert", auto_reload=True)
