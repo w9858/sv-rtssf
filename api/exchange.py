@@ -38,22 +38,22 @@ exchange = Blueprint("api-exchange")
 def m_exchange_list(request,pbrq,pbrs):
     pbrs.m_exchange_list.add()
     pbrs.m_exchange_list[-1].exchange_id = random.choice(adv_chara)
-    pbrs.m_exchange_list[-1].name = "Mainexchange"
+    pbrs.m_exchange_list[-1].name = "exchange1"
     pbrs.m_exchange_list[-1].balloon_msg = str(pbrs.m_exchange_list[-1].exchange_id)
     pbrs.m_exchange_list[-1].button_type = 0
     pbrs.m_exchange_list.add()
     pbrs.m_exchange_list[-1].exchange_id = random.choice(adv_chara)
-    pbrs.m_exchange_list[-1].name = "TESTexchange2"
+    pbrs.m_exchange_list[-1].name = "exchange2"
     pbrs.m_exchange_list[-1].balloon_msg = str(pbrs.m_exchange_list[-1].exchange_id)
     pbrs.m_exchange_list[-1].button_type = 1
     pbrs.m_exchange_list.add()
     pbrs.m_exchange_list[-1].exchange_id = random.choice(adv_chara)
-    pbrs.m_exchange_list[-1].name = "TESTexchange3"
+    pbrs.m_exchange_list[-1].name = "exchange3"
     pbrs.m_exchange_list[-1].balloon_msg = str(pbrs.m_exchange_list[-1].exchange_id)
     pbrs.m_exchange_list[-1].button_type = 2
     pbrs.m_exchange_list.add()
     pbrs.m_exchange_list[-1].exchange_id = random.choice(adv_chara)
-    pbrs.m_exchange_list[-1].name = "TESTexchange4"
+    pbrs.m_exchange_list[-1].name = "exchange4"
     pbrs.m_exchange_list[-1].balloon_msg = str(pbrs.m_exchange_list[-1].exchange_id)
     pbrs.m_exchange_list[-1].button_type = 3
     
@@ -70,5 +70,4 @@ async def exchange_handler(request, path):
     # if (request.host != "api.relefra.jp"): raise exceptions.Forbidden()
     if (path == "list"): return m_exchange_list(request, pb.RequestList(), pb.ResponseList())
     if (path == "item_list"): return exchange_item_list(request, pb.RequestItemList(), pb.ResponseItemList())
-    #if (any): request.ctx.errorcode = 201; return empty() # empty maintain return
     else: raise exceptions.NotFound()

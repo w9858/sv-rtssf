@@ -27,7 +27,6 @@ def shop_list(request,pbrq,pbrs):
     pbrs.shop_list[-1].name = "極スパイス"
     pbrs.shop_list[-1].balloon_msg = "Main"
     pbrs.shop_list[-1].point_resource_type = 6
-    pbrs.shop_list[-1].point_resource_id = 0
     pbrs.shop_list[-1].button_type = 0
     
     pbrs.shop_list.add()
